@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="63d99e2e-abe5-47a4-afc0-54ac2f7bd6e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DjangoProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoProjects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,17 +49,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="213" y="19" key="DBNavigator.ProjectSettingsDialog/0.0.1366.728@0.0.1366.728" timestamp="1586464801940" />
-    <state x="462" y="118" key="FileChooserDialogImpl" timestamp="1586463538779">
+    <state x="462" y="118" key="FileChooserDialogImpl" timestamp="1586556194159">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586463538779" />
-    <state x="184" y="6" key="SettingsEditor" timestamp="1586536392747">
+    <state x="462" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586556194159" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1586556619694">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586536392747" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586464906618">
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586556619694" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586556723032">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586464906618" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586556723032" />
   </component>
 </project>
