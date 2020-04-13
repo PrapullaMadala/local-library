@@ -1,11 +1,14 @@
+"""Creating models here"""
+
+import uuid
 from django.db import models
 from django.urls import reverse
-import uuid
 
 
 class Genre(models.Model):
     """Model representing a book genre."""
-    book_kind = models.CharField(max_length=200, help_text='Enter a book genre (e.g. Science Fiction)')
+    book_kind = models.CharField(max_length=200,
+                                 help_text='Enter a book genre (e.g. Science Fiction)')
 
     def __str__(self):
         """String for representing the Model object."""
@@ -28,7 +31,8 @@ class Book(models.Model):
     # ManyToManyField used because genre can contain many books. Books can cover many genres.
     # Genre class has already been defined so we can specify the object above.
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
-    # Foreign Key used because book can only written in one language, but same language used in multiple books
+    # Foreign Key used because book can only written in one language,
+    # but same language used in multiple books
     # Language as a string rather than object because it hasn't been declared yet in the file
     language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True)
 
@@ -38,10 +42,12 @@ class Book(models.Model):
 
     def get_absolute_url(self):
         """Returns the url to access a detail record for this book."""
+        # pylint: disable=maybe-no-member
         return reverse('book-detail', args=[str(self.id)])
 
     def display_genre(self):
         """Create a string for the Genre. This is required to display genre in Admin."""
+        # pylint: disable=maybe-no-member
         return ', '.join(genre.book_kind for genre in self.genre.all()[:3])
 
     display_genre.short_description = 'Genre'
@@ -71,10 +77,13 @@ class BookInstance(models.Model):
     )
 
     class Meta:
+        # pylint: disable=too-few-public-methods
+        """Repesenting inner class with ordering options"""
         ordering = ['due_back']
 
     def __str__(self):
         """String for representing the Model object."""
+        # pylint: disable=maybe-no-member
         return f'{self.id} ({self.book.title})'
 
 
@@ -86,10 +95,14 @@ class Author(models.Model):
     date_of_death = models.DateField('Died', null=True, blank=True)
 
     class Meta:
+
+        # pylint: disable=too-few-public-methods
+        """Repesenting inner class with ordering options"""
         ordering = ['last_name', 'first_name']
 
     def get_absolute_url(self):
         """Returns the url to access a particular author instance."""
+        # pylint: disable=maybe-no-member
         return reverse('author-detail', args=[str(self.id)])
 
     def __str__(self):
@@ -99,7 +112,8 @@ class Author(models.Model):
 
 class Language(models.Model):
     """Model representing a Language (e.g. English, French, Japanese, etc.)"""
-    lang_name = models.CharField(max_length=200, help_text="Enter a the book's language (e.g. English, French etc.)")
+    lang_name = models.CharField(
+        max_length=200, help_text="Enter a the book's language (e.g. English, French etc.)")
 
     def __str__(self):
         """String for representing the Model object (in Admin site etc.)"""

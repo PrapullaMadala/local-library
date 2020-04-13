@@ -1,8 +1,12 @@
+""" write all view functions here"""
+
+
 from django.shortcuts import render
-from .models import Book, Author, BookInstance, Genre
 from django.views import generic
+from .models import Book, Author, BookInstance
 
 
+# pylint: disable=maybe-no-member
 def index(request):
     """View function for home page of site."""
 
@@ -32,10 +36,9 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 
+# pylint: disable=too-many-ancestors
 class BookListView(generic.ListView):
+    """Generic class-based view for a list of books."""
     model = Book
-#   context_object_name = 'book_list'  # your own name for the list as a template variable
-    queryset = Book.objects.filter(title__icontains='war')[:5]  # Get 5 books containing the title war
-#   template_name = 'books/my_arbitrary_template_name_list.html'  # Specify your own template name/location
-
-
+    # Get 5 books containing the title war
+    queryset = Book.objects.filter(title__icontains='war')[:5]

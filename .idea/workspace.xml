@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63d99e2e-abe5-47a4-afc0-54ac2f7bd6e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DjangoProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoProjects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +44,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="447" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586795757471">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="447" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1586795757471" />
     <state x="213" y="19" key="DBNavigator.ProjectSettingsDialog" timestamp="1586464801940">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
