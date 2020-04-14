@@ -11,7 +11,7 @@ pipeline {
         timestamps()
     }
     environment {
-      bat 'echo %path%'
+        bat 'echo %path%'
     }
 
     stages {
@@ -26,8 +26,6 @@ pipeline {
                 script{
                 bat '''virtualenv %BUILD_TAG%
                        .\\%BUILD_TAG%\\Scripts\\activate.bat'''
-
-
                 }
             }
         }
