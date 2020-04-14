@@ -25,6 +25,7 @@ pipeline {
                 script {
                     bat 'echo %PATH%'
                     bat 'echo %WORKSPACE%'
+                    bat python --version
                     bat '''virtualenv %BUILD_TAG%
                            cmd /k ".\\%BUILD_TAG%\\Scripts\\activate.bat"'''
                 }
