@@ -11,6 +11,7 @@ pipeline {
         timestamps()
     }
     environment {
+        env.PATH = env.PATH + ";c:\\Windows\\System32"
         PATH = 'C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38\\python.exe:%PATH%'
     }
 
