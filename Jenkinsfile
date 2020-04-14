@@ -11,7 +11,7 @@ pipeline {
         timestamps()
     }
     environment {
-      echo %path%
+      bat 'echo %path%'
     }
 
     stages {
