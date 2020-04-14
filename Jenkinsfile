@@ -28,7 +28,7 @@ pipeline {
                     bat 'echo %BUILD_TAG%'
                     bat 'python --version'
                     bat '''python -m virtualenv %BUILD_TAG%
-                           cmd /k ".\\%BUILD_TAG%\\Scripts\\activate.bat"'''
+                           cmd /k ".\\%BUILD_TAG%\\Scripts\\activate.bat & pip install -r requirements.txt"'''
                 }
             }
         }
