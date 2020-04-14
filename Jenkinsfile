@@ -23,8 +23,8 @@ pipeline {
         stage('Build environment') {
             steps {
                 echo 'Building virtual environment'
-                bat echo %path%
-                script{
+                bat 'echo %PATH%'
+                script {
                     bat '''virtualenv %BUILD_TAG%
                            cmd /k ".\\%BUILD_TAG%\\Scripts\\activate.bat"'''
                 }
