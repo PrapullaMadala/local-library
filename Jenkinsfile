@@ -1,10 +1,34 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('*/5 * * * 1-5')
+    }
+    options {
+        skipDefaultCheckout(true)
+        // Keep the 10 most recent builds
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timestamps()
+    }
+    environment {
+      echo %path%
+    }
+
     stages {
-        stage('Build') {
+        stage ("Code pull"){
+            steps{
+                checkout scm
+            }
+        }
+        stage('Build environment') {
             steps {
-                echo 'Building'
+                echo 'Building virtual environment'
+                script{
+                bat '''virtualenv %BUILD_TAG%
+                       .\\%BUILD_TAG%\\Scripts\\activate.bat'''
+
+
+                }
             }
         }
         stage('Test') {
