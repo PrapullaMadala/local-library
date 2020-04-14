@@ -32,9 +32,16 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        stage('Test environment') {
             steps {
                 echo 'Testing'
+                script {
+                    bat 'cmd /k ".\\%BUILD_TAG%\\Scripts\\activate.bat"'
+                    bat '''pip list
+                           where pip
+                           where python
+                           '''
+                }
             }
         }
         stage('Deploy') {
