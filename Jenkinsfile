@@ -11,7 +11,7 @@ pipeline {
         timestamps()
     }
     environment {
-        PATH = "%PATH%;c:\\Windows\\System32;C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38"
+        path = "%path%;c:\\Windows\\System32;C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38"
     }
     stages {
         stage ("Code pull"){
@@ -23,9 +23,9 @@ pipeline {
             steps {
                 echo 'Building virtual environment'
                 script {
-                    bat 'echo %PATH%'
+                    bat 'echo %path%'
                     bat 'echo %WORKSPACE%'
-                    bat python --version
+                    bat 'python --version'
                     bat '''virtualenv %BUILD_TAG%
                            cmd /k ".\\%BUILD_TAG%\\Scripts\\activate.bat"'''
                 }
