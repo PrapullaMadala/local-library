@@ -11,7 +11,7 @@ pipeline {
         timestamps()
     }
     environment {
-        path='C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38\\python.exe;%path%'
+        PATH = 'C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38\\python.exe:%PATH%'
     }
 
     stages {
