@@ -25,12 +25,12 @@ pipeline {
                 script {
                     bat 'echo %BUILD_TAG%'
                     bat '''
-                     mkvirtualenv %BUILD_TAG%
-                     workon
-                     workon %BUILD_TAG%
-                     cd library
-                     python -m pip freeze
-                     '''
+                        mkvirtualenv %BUILD_TAG%
+                        workon
+                        workon %BUILD_TAG%
+                        cd library
+                        python -m pip freeze
+                        '''
                 }
             }
         }
