@@ -54,6 +54,7 @@ pipeline {
     post {
         always {
             echo 'This will always run'
+            bat 'rmvirtualenv myenv'
         }
         success {
             echo 'This will run only if successful'
