@@ -68,9 +68,13 @@ pipeline {
                                    onlyStable: false,
                                    sourceEncoding: 'ASCII',
                                    zoomCoverageChart: false])
-                    step([$class: 'HTMLReports',
-                                   HTML: 'library\\htmlcov',
-                                   title : 'HTML Report'])
+                    step(publishHTML target: [
+                             allowMissing: false,
+                             alwaysLinkToLastBuild: false,
+                             keepAll: true,
+                             reportDir: 'library\\htmlcov',
+                             reportFiles: 'index.html',
+                             reportName: 'RCov Report'])
                 }
             }
         }
