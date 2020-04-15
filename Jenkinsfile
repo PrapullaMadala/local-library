@@ -24,12 +24,9 @@ pipeline {
                 echo 'Building virtual environment'
                 script {
                     bat 'echo %BUILD_TAG%'
-                    bat '''mkvirtualenv %BUILD_TAG%
-                        lsvirtualenv
-                        workon %BUILD_TAG%
-                        cd library
-                        python -m pip freeze
-                        '''
+                    bat '''cmd /k "mkvirtualenv %BUILD_TAG% & lsvirtualenv & workon %BUILD_TAG% & cd library"
+                           python -m pip freeze
+                           '''
                 }
             }
         }
