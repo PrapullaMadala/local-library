@@ -23,16 +23,13 @@ pipeline {
             steps {
                 echo 'Building virtual environment'
                 script {
-                    bat 'echo %PATH%'
-                    bat 'echo %WORKSPACE%'
-                    bat 'echo %WORKON_HOME%'
                     bat 'echo %BUILD_TAG%'
-                    bat 'python --version'
-                    bat 'python -m pip list'
-                    bat 'python -m virtualenv --version'
-                    bat 'set'
-                    bat 'virtualenvwrapper'
-                    bat ' mkvirtualenv myenv'
+                    bat '''
+                     mkvirtualenv %BUILD_TAG%
+                     workon %BUILD_TAG%
+                     cd library
+                     python -m pip freeze
+                     '''
                 }
             }
         }
