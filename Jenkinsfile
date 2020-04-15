@@ -32,7 +32,7 @@ pipeline {
                     bat 'python --version'
                     bat 'python -m pip list'
                     bat 'python -m virtualenv --version'
-                    bat 'call virtualenvwrapper-win.bat'
+                    bat 'virtualenvwrapper'
                     bat '''python -m mkvirtualenv myenv'''
                 }
             }
