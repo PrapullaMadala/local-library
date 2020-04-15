@@ -13,7 +13,7 @@ pipeline {
     environment {
         PATH = "%PATH%;C:\\Windows\\System32;C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38;\
         C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38\\Scripts"
-        WORKON_HOME = "echo %WORKSPACE%"
+        WORKON_HOME = "C:\\Program Files (x86)\\Jenkins\\workspace\\local-library_master"
     }
     stages {
         stage ("Code pull"){
@@ -30,8 +30,7 @@ pipeline {
                     bat 'echo %WORKON_HOME%'
                     bat 'echo %BUILD_TAG%'
                     bat 'python --version'
-                    bat '''python -m virtualenv %BUILD_TAG%
-                           cmd /k ".\\%BUILD_TAG%\\Scripts\\activate.bat & pip install -r requirements.txt"'''
+                    bat 'python -m virtualenvwrapper'
                     bat '''python -m mkvirtualenv myenv'''
                 }
             }
@@ -40,10 +39,7 @@ pipeline {
             steps {
                 echo 'Testing'
                 script {
-                    bat '''
-                    cmd /c ".\\%BUILD_TAG%\\Scripts\\activate.bat & pip list & where pip & where python\
-                    & cd library & pytest -v"
-                    '''
+
 
                 }
             }
