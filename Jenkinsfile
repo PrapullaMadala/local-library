@@ -10,7 +10,9 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10'))
         timestamps()
     }
-
+    environment {
+        WORKON_HOME = "C:\\Program Files (x86)\\Jenkins\\workspace\\local-library_master"
+    }
     stages {
         stage ("Code pull"){
             steps{
@@ -29,8 +31,8 @@ pipeline {
                     bat 'python -m pip list'
                     bat 'python -m virtualenv --version'
                     bat 'set'
-                    bat 'cmd /c "virtualenvwrapper"'
-                    bat '''python -m mkvirtualenv myenv'''
+                    bat 'virtualenvwrapper'
+                    bat ' mkvirtualenv myenv'
                 }
             }
         }
