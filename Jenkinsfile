@@ -10,7 +10,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10'))
         timestamps()
     }
-    
+
     stages {
         stage ("Code pull"){
             steps{
