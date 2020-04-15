@@ -24,8 +24,7 @@ pipeline {
                 echo 'Building virtual environment'
                 script {
                     bat 'echo %BUILD_TAG%'
-                    bat '''cmd /c "mkvirtualenv %BUILD_TAG% & whereis python"
-                           python -m pip freeze
+                    bat '''cmd /c "mkvirtualenv %BUILD_TAG% & workon %BUILD_TAG% & pip install -r requirements.txt"
                            '''
                 }
             }
@@ -35,11 +34,34 @@ pipeline {
                 echo 'Testing'
                 script {
                     bat 'lsvirtualenv'
-                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest -v"
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & "
 
                 }
             }
         }
+        stage('Static code metrics') {
+            steps {
+                echo "Code Coverage"
+                script {
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --cov=.\\catalogapp --cov-report xml"
+
+                }
+                post{
+                always{
+                    step([$class: 'CoberturaPublisher',
+                                   autoUpdateHealth: false,
+                                   autoUpdateStability: false,
+                                   coberturaReportFile: '/coverage.xml',
+                                   failNoReports: false,
+                                   failUnhealthy: false,
+                                   failUnstable: false,
+                                   maxNumberOfBuilds: 10,
+                                   onlyStable: false,
+                                   sourceEncoding: 'ASCII',
+                                   zoomCoverageChart: false])
+                }
+
+            }
         stage('Deploy') {
             steps {
                 echo 'Deploying'
