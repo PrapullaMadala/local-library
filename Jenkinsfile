@@ -36,8 +36,8 @@ pipeline {
             steps {
                 echo 'Testing'
                 script {
-                    bat 'cmd /k ".\\%BUILD_TAG%\\Scripts\\activate.bat & pip list & where pip &
-                    where python & cd library & pytest"'
+                    bat 'cmd /k ".\\%BUILD_TAG%\\Scripts\\activate.bat & pip list & where pip
+                     & where python & cd library & pytest"'
                 }
             }
         }
