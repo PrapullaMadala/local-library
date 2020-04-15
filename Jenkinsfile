@@ -39,7 +39,7 @@ pipeline {
             steps {
                 echo 'Testing'
                 script {
-
+                    bat 'echo hi'
 
                 }
             }
