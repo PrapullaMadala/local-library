@@ -30,7 +30,8 @@ pipeline {
                     bat 'echo %WORKON_HOME%'
                     bat 'echo %BUILD_TAG%'
                     bat 'python --version'
-                    bat 'virtualenvwrapper'
+                    bat 'cd pip list'
+                    bat 'python virtualenvwrapper'
                     bat '''python -m mkvirtualenv myenv'''
                 }
             }
