@@ -11,7 +11,7 @@ pipeline {
         timestamps()
     }
     environment {
-        PATH = "%PATH%;c:\\Windows\\System32;C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38;
+        PATH = "%PATH%;c:\\Windows\\System32;C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38;\
         c:\\Windows\\System32;C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38\\Scripts"
         WORKON_HOME = %WORKSPACE%
     }
