@@ -10,11 +10,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10'))
         timestamps()
     }
-    environment {
-        PATH = "%PATH%;C:\\Windows\\System32;C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38;\
-        C:\\Users\\prapu\\AppData\\Local\\Programs\\Python\\Python38\\Scripts"
-        WORKON_HOME = "C:\\Program Files (x86)\\Jenkins\\workspace\\local-library_master"
-    }
+    
     stages {
         stage ("Code pull"){
             steps{
