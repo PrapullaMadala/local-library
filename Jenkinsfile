@@ -68,7 +68,7 @@ pipeline {
                                    onlyStable: false,
                                    sourceEncoding: 'ASCII',
                                    zoomCoverageChart: false])
-                    step(publishHTML target: [
+                    publishHTML(target:[
                              allowMissing: false,
                              alwaysLinkToLastBuild: false,
                              keepAll: true,
