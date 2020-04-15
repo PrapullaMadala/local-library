@@ -69,7 +69,7 @@ pipeline {
                                    sourceEncoding: 'ASCII',
                                    zoomCoverageChart: false])
                     step([$class: 'HTMLReports',
-                                   HTML archive: 'library\\htmlcov',
+                                   HTML: 'library\\htmlcov',
                                    title : 'HTML Report'])
                 }
             }
