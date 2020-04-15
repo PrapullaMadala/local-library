@@ -34,8 +34,7 @@ pipeline {
                 echo 'Testing'
                 script {
                     bat 'lsvirtualenv'
-                    bat '''cmd /k "workon %BUILD_TAG% & cd library & "
-
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & "'''
                 }
             }
         }
@@ -43,10 +42,10 @@ pipeline {
             steps {
                 echo "Code Coverage"
                 script {
-                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --cov=.\\catalogapp --cov-report xml"
-
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --cov=.\\catalogapp --cov-report xml"'''
                 }
-                post{
+            }
+            post{
                 always{
                     step([$class: 'CoberturaPublisher',
                                    autoUpdateHealth: false,
@@ -60,8 +59,8 @@ pipeline {
                                    sourceEncoding: 'ASCII',
                                    zoomCoverageChart: false])
                 }
-
             }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying'
