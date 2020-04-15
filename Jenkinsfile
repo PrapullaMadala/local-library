@@ -50,7 +50,7 @@ pipeline {
                     step([$class: 'CoberturaPublisher',
                                    autoUpdateHealth: false,
                                    autoUpdateStability: false,
-                                   coberturaReportFile: '.\\coverage.xml',
+                                   coberturaReportFile: 'library\\coverage.xml',
                                    failNoReports: false,
                                    failUnhealthy: false,
                                    failUnstable: false,
