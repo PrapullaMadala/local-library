@@ -31,6 +31,7 @@ pipeline {
                     bat 'echo %BUILD_TAG%'
                     bat 'python --version'
                     bat 'python -m pip list'
+                    bat 'python -m virtualenv --version'
                     bat 'python virtualenvwrapper'
                     bat '''python -m mkvirtualenv myenv'''
                 }
