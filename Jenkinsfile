@@ -11,7 +11,7 @@ pipeline {
         timestamps()
     }
     environment {
-        WORKON_HOME = "C:\\Program Files (x86)\\Jenkins\\workspace\\local-library_master\\Envs"
+        WORKON_HOME = ".\\Envs"
     }
     stages {
         stage ("Code pull"){
