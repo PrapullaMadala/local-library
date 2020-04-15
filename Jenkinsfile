@@ -44,12 +44,6 @@ pipeline {
                 script {
                     bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --cov=.\\catalogapp --cov-report html"'''
                 }
-                sh  ''' source activate ${BUILD_TAG}
-                        radon raw --json irisvmpy > raw_report.json
-                        radon cc --json irisvmpy > cc_report.json
-                        radon mi --json irisvmpy > mi_report.json
-                        sloccount --duplicates --wide irisvmpy > sloccount.sc
-                    '''
                 echo "Code Coverage"
                 script {
                     bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --cov=.\\catalogapp --cov-report xml"'''
@@ -74,7 +68,7 @@ pipeline {
                              keepAll: true,
                              reportDir: 'library\\htmlcov',
                              reportFiles: 'index.html',
-                             reportName: 'RCov Report'])
+                             reportName: 'HTML Report'])
                 }
             }
         }
