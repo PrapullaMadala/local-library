@@ -26,6 +26,7 @@ pipeline {
                     bat 'echo %BUILD_TAG%'
                     bat '''
                      mkvirtualenv %BUILD_TAG%
+                     workon
                      workon %BUILD_TAG%
                      cd library
                      python -m pip freeze
@@ -51,7 +52,7 @@ pipeline {
     post {
         always {
             echo 'This will always run'
-            bat 'rmvirtualenv myenv'
+            bat 'rmvirtualenv %BUILD_TAG%'
         }
         success {
             echo 'This will run only if successful'
