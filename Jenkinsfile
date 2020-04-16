@@ -90,8 +90,7 @@ pipeline {
                 always {
                     // Archive unit tests for the future
                     junit (allowEmptyResults: true,
-                          testResults: '.\\reports\\unit_tests.xml',
-                          fingerprint: true)
+                          testResults: '.\\reports\\unit_tests.xml')
                 }
             }
         }
