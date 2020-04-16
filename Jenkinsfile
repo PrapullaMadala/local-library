@@ -51,7 +51,7 @@ pipeline {
                 echo "Style check"
                 script {
                     bat '''cmd /k "workon %BUILD_TAG% & cd library & pylint --load-plugins pylint_django -v \
-                    --rcfile=pylint.cfg catalogapp > pylint.log || true"'''
+                    --rcfile=pylintrc catalogapp > pylint.log || true"'''
                 }
             }
             post{
