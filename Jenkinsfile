@@ -74,14 +74,28 @@ pipeline {
                              reportDir: 'library\\htmlcov',
                              reportFiles: 'index.html',
                              reportName: 'HTML Report'])
-                    recordIssues (enabledForFailure: true, aggregatingResults: true,
+                    recordIssues enabledForFailure: true, aggregatingResults: true,
                                  sourceCodeEncoding: 'UTF-8'
-                                 tools: [pyLint(pattern: '**\\pylint.log, .\\pylint, .\\pylint.log, library\\pylint.log'),\
-                                 checkStyle()])
-
+                                 tool: pyLint(pattern: '**\\pylint.log, *.log, .\\pylint.log, library\\pylint.log')
                 }
             }
         }
+        stage('Unit tests') {
+            steps {
+                script {
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --verbose --junit-xml reports\\unit_tests.xml"'''
+                }
+            }
+            post {
+                always {
+                    // Archive unit tests for the future
+                    junit (allowEmptyResults: true,
+                          testResults: '.\\reports\\unit_tests.xml',
+                          fingerprint: true)
+                }
+            }
+        }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying'
