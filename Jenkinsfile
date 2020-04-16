@@ -48,6 +48,14 @@ pipeline {
                 script {
                     bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --cov=.\\catalogapp --cov-report xml"'''
                 }
+                echo "Style check"
+                script {
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pylint --load-plugins pylint_django\
+                     -v --rcfile=pylint.cfg catalogapp > pylint.log || true"'''
+                }
+                sh  ''' source activate ${BUILD_TAG}
+                        pylint irisvmpy || true
+                    '''
             }
             post{
                 always{
