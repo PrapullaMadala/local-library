@@ -83,14 +83,14 @@ pipeline {
         stage('Unit tests') {
             steps {
                 script {
-                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --verbose --junit-xml reports\\unit_tests.xml"'''
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --verbose --junit-xml pytest_reports.xml"'''
                 }
             }
             post {
                 always {
                     // Archive unit tests for the future
                     junit (allowEmptyResults: true,
-                          testResults: '.\\reports\\unit_tests.xml')
+                          testResults: '.\\pytest_reports.xml')
                 }
             }
         }
