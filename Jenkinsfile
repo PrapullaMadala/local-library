@@ -74,6 +74,10 @@ pipeline {
                              reportDir: 'library\\htmlcov',
                              reportFiles: 'index.html',
                              reportName: 'HTML Report'])
+                    step([$class: 'Violations',
+                                   pattern: '**/pylint.log',
+                                   unstableTotalAll: '0',
+                                   usePreviousBuildAsReference: true])
                 }
             }
         }
