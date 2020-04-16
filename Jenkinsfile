@@ -76,7 +76,7 @@ pipeline {
                              reportName: 'HTML Report'])
                     recordIssues enabledForFailure: true, aggregatingResults: true,
                                  sourceCodeEncoding: 'UTF-8'
-                                 tool: pyLint(pattern: '**\\pylint.log, *.log, .\\pylint.log, library\\pylint.log')
+                                 tool: pyLint(pattern: '**\\pylint.log, pylint.log, **\\pylint, library\\pylint.log')
                 }
             }
         }
