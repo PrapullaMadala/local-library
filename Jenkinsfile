@@ -74,7 +74,6 @@ pipeline {
                              reportDir: 'library\\htmlcov',
                              reportFiles: 'index.html',
                              reportName: 'HTML Report'])
-                    recordIssues(enabledForFailure: true, aggregatingResults: true, tools: pep8('pylint.log'))
                 }
             }
         }
