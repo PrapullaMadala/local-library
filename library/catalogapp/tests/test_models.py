@@ -1,6 +1,4 @@
 import pytest
-import factory
-from typing import List
 from catalogapp.models import Author, Book, Genre, BookInstance
 
 

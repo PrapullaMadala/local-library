@@ -52,8 +52,8 @@ pipeline {
                 script {
                     bat '''cmd /k "workon %BUILD_TAG% & cd library & pylint --load-plugins pylint_django -v\
                     --rcfile=.pylintrc catalogapp > pylint.log || true"'''
-                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pycodestyle --max-line-length=120 --exclude=.pyenv\
-                    ,build --format=pylint . > pep8.txt || exit 0"'''
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pycodestyle -v --max-line-length=120\
+                                         --format=pylint . > pep8.txt || exit 0"'''
 
                 }
             }
