@@ -79,7 +79,7 @@ pipeline {
                              reportName: 'HTML Report'])
                     recordIssues enabledForFailure: true, aggregatingResults: true,
                                  sourceCodeEncoding: 'UTF-8'
-                                 qualityGates: [[threshold: 1, type: 'TOTAL', unstable: true]]
+                                 qualityGates: [threshold: 1, type: 'TOTAL', unstable: true]
                                  tool: pyLint(pattern: 'pep8.txt, **\\pylint.log, pylint.log, **\\pylint, library\\pylint.log')
                 }
             }
