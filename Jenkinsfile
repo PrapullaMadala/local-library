@@ -75,8 +75,7 @@ pipeline {
                              reportFiles: 'index.html',
                              reportName: 'HTML Report'])
                     recordIssues(
-                        tools: [PyLint('**\\pylint.log')],
-                        unstableTotalAll: 100,
+                        tools: [pyLint('**\\pylint.log')],
                         )
                 }
             }
