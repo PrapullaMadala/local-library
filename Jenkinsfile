@@ -52,6 +52,9 @@ pipeline {
                 script {
                     bat '''cmd /k "workon %BUILD_TAG% & cd library & pylint --load-plugins pylint_django -v\
                     --rcfile=.pylintrc catalogapp > pylint.log || true"'''
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pycodestyle --max-line-length=120 --exclude=.pyenv\
+                    ,build --format=pylint . > pep8.txt || exit 0"'''
+
                 }
             }
             post{
@@ -76,7 +79,8 @@ pipeline {
                              reportName: 'HTML Report'])
                     recordIssues enabledForFailure: true, aggregatingResults: true,
                                  sourceCodeEncoding: 'UTF-8'
-                                 tool: pyLint(pattern: '**\\pylint.log, pylint.log, **\\pylint, library\\pylint.log')
+                                 qualityGates: [[threshold: 1, type: 'TOTAL', unstable: true]]
+                                 tool: pyLint(pattern: 'pep8.txt, **\\pylint.log, pylint.log, **\\pylint, library\\pylint.log')
                 }
             }
         }

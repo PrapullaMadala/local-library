@@ -34,7 +34,7 @@ load-plugins=
 persistent=yes
 
 # Specify a configuration file.
-#rcfile=
+rcfile=**\pylint.log, pylint.log, **\.log
 
 # When enabled, pylint would attempt to guess common misconfiguration and emit
 # user-friendly hints instead of false-positive error messages.
