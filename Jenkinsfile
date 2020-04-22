@@ -79,9 +79,9 @@ pipeline {
                              reportName: 'HTML Report'])
                     recordIssues enabledForFailure: true, aggregatingResults: true,
                                  sourceCodeEncoding: 'UTF-8',
-                                 tool: pyLint('**\\pylint.log, pylint.log, **\\pylint, library\\pylint.log')
+                                 tools: pyLint('**\\pylint.log, pylint.log, **\\pylint, library\\pylint.log')
                     recordIssues qualityGates: [[threshold: 1, type: 'TOTAL', unstable: true]],
-                                 tool: pyLint(pattern: 'pep8.txt')
+                                 tools: pyLint(pattern: 'pep8.txt')
                 }
             }
         }
