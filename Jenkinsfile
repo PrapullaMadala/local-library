@@ -74,9 +74,9 @@ pipeline {
                              reportDir: 'library\\htmlcov',
                              reportFiles: 'index.html',
                              reportName: 'HTML Report'])
-                    recordIssues enabledForFailure: true, aggregatingResults: true,
+                    recordIssues(enabledForFailure: true, aggregatingResults: true,
                                  sourceCodeEncoding: 'UTF-8',
-                                 tool: pyLint('**\\pylint.log, pylint.log, **\\pylint, library\\pylint.log')
+                                 tool: pyLint('**\\pylint.log, pylint.log, **\\pylint, library\\pylint.log'))
 
                 }
             }
