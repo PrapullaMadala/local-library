@@ -74,7 +74,7 @@ pipeline {
                              reportDir: 'library\\htmlcov',
                              reportFiles: 'index.html',
                              reportName: 'HTML Report'])
-                    recordIssues tool: pyLint('**\\pylint.log')
+                    recordIssues tools: pyLint('**\\pylint.log')
                 }
             }
         }
