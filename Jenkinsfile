@@ -74,10 +74,10 @@ pipeline {
                              reportDir: 'library\\htmlcov',
                              reportFiles: 'index.html',
                              reportName: 'HTML Report'])
-                    recordIssues(enabledForFailure: true, aggregatingResults: true,
-                                 sourceCodeEncoding: 'UTF-8',
-                                 tools: pyLint('**\\pylint.log, pylint.log, **\\pylint, library\\pylint.log'))
-
+                    recordIssues(
+                        tool: pyLint('**\\pylint.log')
+                        unstableTotalAll: 100,
+                        )
                 }
             }
         }
