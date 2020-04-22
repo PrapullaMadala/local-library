@@ -51,7 +51,7 @@ pipeline {
                 echo "Style check"
                 script {
                     bat '''cmd /k "workon %BUILD_TAG% & cd library & pylint --load-plugins pylint_django -v\
-                    --rcfile=.pylintrc catalogapp > reports\\pylint.log || true"'''
+                    --rcfile=.pylintrc catalogapp > pylint.log || true"'''
                 }
             }
             post{
@@ -74,7 +74,7 @@ pipeline {
                              reportDir: 'library\\htmlcov',
                              reportFiles: 'index.html',
                              reportName: 'HTML Report'])
-                    recordIssues tools: pyLint('**\\pylint.log, pylint.log, **\\pylint, library\\pylint.log')
+                    recordIssues tools: pyLint('pylint.log')
                 }
             }
         }
