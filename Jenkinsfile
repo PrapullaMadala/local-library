@@ -87,7 +87,7 @@ pipeline {
             post {
                 always {
                     // Archive unit tests for the future
-                    archiveArtifacts  '.\\**\\*.xml'
+                    archiveArtifacts  '**\\*.xml'
                     junit (allowEmptyResults: true,
                           testResults: '.\\pytest_reports.xml')
                 }
