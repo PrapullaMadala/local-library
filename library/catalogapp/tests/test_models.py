@@ -1,5 +1,5 @@
 import pytest
-from catalogapp.models import Author, Book, Genre, BookInstance
+from catalogapp.models import Author, Book, Genre, BookInstance, Language
 
 
 @pytest.mark.django_db
@@ -58,11 +58,12 @@ class TestBook:
         self.genre1 = Genre.objects.create(book_kind='genre1')
         self.genre2 = Genre.objects.create(book_kind='genre2')
         self.genre3 = Genre.objects.create(book_kind='genre3')
+        self.genre4 = Genre.objects.create(book_kind='genre4')
         self.book1 = Book.objects.create(title='mybook1')
         self.book2 = Book.objects.create(title='mybook2')
         self.before_count = self.book1.genre.count()
         self.book1.genre.add(self.genre1, self.genre2)
-        self.book2.genre.add(self.genre1, self.genre3)
+        self.book2.genre.add(self.genre1, self.genre2, self.genre3, self.genre4)
         self.after_count = self.book1.genre.count()
 
     def test_book_instance(self, create_book_instance, create_author_instance):
@@ -96,12 +97,15 @@ class TestBook:
         assert expected_url == '/catalogapp/book/' + str(_id)
 
     def test_display_genre(self, create_genre_instance):
-        genre = self.book1.genre.all()[:3]
-        assert genre.count() == 2
-        assert list(genre) == [self.genre1, self.genre2]
+        genres = self.book2.genre.all()
+        assert genres.count() == 4
+        assert list(genres) == [self.genre1, self.genre2, self.genre3, self.genre4]
         assert self.genre1.book_kind == 'genre1'
         assert self.genre2.book_kind == 'genre2'
-        assert ", ".join([self.genre1.book_kind, self.genre2.book_kind]) == 'genre1, genre2'
+        expected_value = ", ".join(genre.book_kind for genre in self.book2.genre.all()[:3])
+        assert expected_value == self.book2.display_genre()
+        description = self.book2.display_genre.short_description
+        assert description == 'Genre'
 
     def test_isbn_field(self, create_book_instance):
         max_length = create_book_instance._meta.get_field('isbn').max_length
@@ -112,6 +116,16 @@ class TestBook:
         s = help_text[22:-17]
         expected_value = "https://www.isbn-international.org/content/what-isbn"
         assert s == expected_value
+
+    def test_genre_string_representation(self):
+        genre_obj = Genre.objects.create(book_kind='genretype')
+        expected_value = str(genre_obj)
+        assert expected_value == genre_obj.book_kind
+
+    def test_language_string_representation(self):
+        lang_obj = Language.objects.create(lang_name='english')
+        expected_value = str(lang_obj)
+        assert expected_value == lang_obj.lang_name
 
 
 @pytest.mark.django_db
@@ -143,3 +157,4 @@ class TestBookInstance:
     def test_meta(self, create_bookcopy_instance):
         ordering = create_bookcopy_instance._meta.ordering[0]
         assert ordering == 'due_back'
+
