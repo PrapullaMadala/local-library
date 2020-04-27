@@ -1,6 +1,7 @@
 pipeline {
-    agent any
-
+    agent {
+      node {label 'python'}
+    }
     triggers {
         pollSCM('*/5 * * * 1-5')
     }
@@ -16,6 +17,7 @@ pipeline {
     stages {
         stage ("Code pull"){
             steps{
+                echo 'Checkingout code from repository'
                 checkout scm
             }
         }
@@ -31,14 +33,14 @@ pipeline {
         }
         stage('Test environment') {
             steps {
-                echo 'Testing'
+                echo 'Activating environment'
                 script {
                     bat 'lsvirtualenv'
                     bat '''cmd /k "workon %BUILD_TAG% & cd library & "'''
                 }
             }
         }
-        stage('Static code metrics') {
+        stage('Static code analysis') {
             steps {
                 echo "Raw metrics"
                 script {
@@ -78,18 +80,18 @@ pipeline {
                 }
             }
         }
-        stage('Unit tests') {
+        stage('Unit testing') {
             steps {
                 script {
-                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --verbose --junit-xml pytest_reports.xml"'''
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & pytest --verbose --junit-xml reports\\pytest_reports.xml"'''
                 }
             }
             post {
                 always {
                     // Archive unit tests for the future
-                    archiveArtifacts  '**\\*.xml'
+                    archiveArtifacts  'reports\\*.xml'
                     junit (allowEmptyResults: true,
-                          testResults: '.\\pytest_reports.xml')
+                          testResults: '.\\reports\\pytest_reports.xml')
                 }
             }
         }
