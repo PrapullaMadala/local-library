@@ -127,9 +127,10 @@ class LoanedBooksAllListView(PermissionRequiredMixin, generic.ListView):
     permission_required = 'catalogapp.can_mark_returned'
     template_name = 'catalogapp/bookinstance_list_borrowed_all.html'
     paginate_by = 10
+    ordering = ['due_back']
 
     def get_queryset(self):
-        return BookInstance.objects.filter(status__exact='o').order_by('due_back')
+        return BookInstance.objects.filter(status__exact='o').order_by('-id')
 
 
 class AuthorCreate(CreateView):

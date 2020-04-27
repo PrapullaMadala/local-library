@@ -51,7 +51,7 @@ pipeline {
                 echo "Style check"
                 script {
                     bat '''cmd /k "workon %BUILD_TAG% & cd library & pylint --load-plugins pylint_django -v\
-                    --rcfile=.pylintrc catalogapp > pylint.log || true"'''
+                    --rcfile=.pylintrc catalogapp > pylint.log || exit0"'''
                 }
             }
             post{
@@ -87,12 +87,30 @@ pipeline {
             post {
                 always {
                     // Archive unit tests for the future
+                    archiveArtifacts artifacts: 'build/libs/**/*.jar'
                     junit (allowEmptyResults: true,
                           testResults: '.\\pytest_reports.xml')
                 }
             }
         }
-
+        stage('Build package') {
+            when {
+                expression {
+                    currentBuild.result == null || currentBuild.result == 'SUCCESS'
+                }
+            }
+            steps {
+                script {
+                    bat '''cmd /k "workon %BUILD_TAG% & cd library & python setup.py bdist_wheel"'''
+                }
+            }
+            post {
+                always {
+                    // Archive unit tests for the future
+                    archiveArtifacts allowEmptyArchive: true, artifacts: 'dist/*whl', fingerprint: true)
+                }
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying'
