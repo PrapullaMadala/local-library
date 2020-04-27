@@ -51,7 +51,7 @@ pipeline {
                 echo "Style check"
                 script {
                     bat '''cmd /k "workon %BUILD_TAG% & cd library & pylint --load-plugins pylint_django -v\
-                    --rcfile=.pylintrc catalogapp > pylint.log || exit0"'''
+                    --rcfile=.pylintrc catalogapp > pylint.log || exit 0"'''
                 }
             }
             post{
@@ -87,7 +87,7 @@ pipeline {
             post {
                 always {
                     // Archive unit tests for the future
-                    archiveArtifacts artifacts: 'build/libs/**/*.jar'
+                    archiveArtifacts  '.\\libs\\**\\*.jar'
                     junit (allowEmptyResults: true,
                           testResults: '.\\pytest_reports.xml')
                 }
