@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    
+
     triggers {
         pollSCM('*/5 * * * 1-5')
     }
@@ -88,7 +88,7 @@ pipeline {
             post {
                 always {
                     // Archive unit tests for the future
-                    archiveArtifacts  'reports\\*.xml'
+                    archiveArtifacts  '.\\reports\\*.xml'
                     junit (allowEmptyResults: true,
                           testResults: '.\\reports\\pytest_reports.xml')
                 }
