@@ -25,7 +25,7 @@ SECRET_KEY = '#e3ciu90+2jv@prxcnic+wbh(47&!dfzyb8!md@xc&-g)%q_dc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['locallibrary.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -133,6 +133,7 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "www", "static")
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'catalogapp/static'),)
 
 LOGIN_REDIRECT_URL = '/catalogapp/'
 
