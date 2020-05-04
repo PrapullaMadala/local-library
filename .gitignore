@@ -92,4 +92,3 @@ venvlibrary/
 libenv/
 # Spyder project settings
 .spyderproject
-db.sqlite3
