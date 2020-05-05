@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '#e3ciu90+2jv@prxcnic+wbh(47&!d
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['172.31.43.242', 'library-dev.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['172.31.27.120' 'library-dev.us-east-1.elasticbeanstalk.com']
 
 # Application definition
 
