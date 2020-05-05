@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '#e3ciu90+2jv@prxcnic+wbh(47&!dfzyb8!md@xc&-g)%q_dc')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+# DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['127.0.0.1', '172.31.27.120', '.elasticbeanstalk.com', 'library-dev.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1', '.elasticbeanstalk.com', 'library-dev.us-east-1.elasticbeanstalk.com']
 
 # Application definition
 
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalogapp',
+    'catalogapp.apps.CatalogappConfig',
 ]
 
 MIDDLEWARE = [
