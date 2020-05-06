@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '#e3ciu90+2jv@prxcnic+wbh(47&!d
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['127.0.0.1', '.elasticbeanstalk.com', 'library-dev.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -97,19 +96,16 @@ WSGI_APPLICATION = 'library.wsgi.application'
     }
 else:'''
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'library',
-            'USER': 'psql',
-            'PASSWORD': 'ajayprapu15',
-            'HOST': 'localhost',
-            'PORT': '5432',
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'library',
+        'USER': 'psql',
+        'PASSWORD': 'ajayprapu15',
+        'HOST': 'localhost',
+        'PORT': '5432',
         }
     }
 
-# Heroku: Update database configuration from $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -155,3 +151,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL = '/catalogapp/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
