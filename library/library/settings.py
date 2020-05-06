@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'library.wsgi.application'
     }
 }'''
 
-if 'RDS_HOSTNAME' in os.environ:
+'''if 'RDS_HOSTNAME' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -95,8 +95,8 @@ if 'RDS_HOSTNAME' in os.environ:
             'PORT': os.environ['RDS_PORT'],
         }
     }
-else:
-    DATABASES = {
+else:'''
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'library',
@@ -155,4 +155,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL = '/catalogapp/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
