@@ -34,7 +34,6 @@ pylint==2.4.0
 pylint-django==2.0.15
 pylint-plugin-utils==0.6
 pyparsing==2.4.7
-pypiwin32==223
 pytest==5.4.1
 pytest-cov==2.8.1
 pytest-django==3.9.0
