@@ -46,7 +46,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='BookInstance',
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, help_text='Unique ID for this particular book across whole library', primary_key=True, serialize=False)),
+                ('id', models.UUIDField(default=uuid.uuid4, help_text='Unique ID for this particular book across whole library1', primary_key=True, serialize=False)),
                 ('imprint', models.CharField(max_length=200)),
                 ('due_back', models.DateField(blank=True, null=True)),
                 ('status', models.CharField(blank=True, choices=[('m', 'Maintenance'), ('o', 'On loan'), ('a', 'Available'), ('r', 'Reserved')], default='m', help_text='Book availability', max_length=1)),
