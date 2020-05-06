@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '#e3ciu90+2jv@prxcnic+wbh(47&!d
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['.elasticbeanstalk.com', '127.0.0.1']
 
 # Application definition
 
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'library.wsgi.application'
     }
 }'''
 
-'''if 'RDS_HOSTNAME' in os.environ:
+if 'RDS_HOSTNAME' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -94,18 +94,17 @@ WSGI_APPLICATION = 'library.wsgi.application'
             'PORT': os.environ['RDS_PORT'],
         }
     }
-else:'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'library',
-        'USER': 'psql',
-        'PASSWORD': 'ajayprapu15',
-        'HOST': 'localhost',
-        'PORT': '5432',
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'library',
+            'USER': 'psql',
+            'PASSWORD': 'ajayprapu15',
+            'HOST': 'localhost',
+            'PORT': '5432',
         }
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -151,8 +150,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL = '/catalogapp/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# Heroku: Update database configuration from $DATABASE_URL.
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
