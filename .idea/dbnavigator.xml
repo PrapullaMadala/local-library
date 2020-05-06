@@ -2,7 +2,11 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
+<<<<<<< HEAD
     <value-preview-text-wrapping value="true" />
+=======
+    <value-preview-text-wrapping value="false" />
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -22,6 +26,7 @@
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
+<<<<<<< HEAD
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="2d4c82ce-9c7e-46dd-8ac8-e89251439f62">
@@ -33,13 +38,25 @@
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="2d4c82ce-9c7e-46dd-8ac8-e89251439f62">
       <console name="postgres" type="STANDARD" schema="information_schema" session="Main" />
+=======
+    <show-object-properties value="false" />
+    <loaded-nodes />
+  </component>
+  <component name="DBNavigator.Project.DatabaseConsoleManager">
+    <connection id="8884e1a9-aa00-4f8a-ad85-f3244a77e56b">
+      <console name="Connection" type="STANDARD" schema="" session="Main" />
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
+<<<<<<< HEAD
     <connection id="2d4c82ce-9c7e-46dd-8ac8-e89251439f62" />
+=======
+    <connection id="8884e1a9-aa00-4f8a-ad85-f3244a77e56b" />
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -64,6 +81,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
+<<<<<<< HEAD
       <connection id="2d4c82ce-9c7e-46dd-8ac8-e89251439f62" active="true">
         <database>
           <name value="postgres" />
@@ -71,13 +89,27 @@
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
           <database-version value="12.2" />
+=======
+      <connection id="8884e1a9-aa00-4f8a-ad85-f3244a77e56b" active="true">
+        <database>
+          <name value="Connection" />
+          <description value="" />
+          <database-type value="MYSQL" />
+          <config-type value="BASIC" />
+          <database-version value="9999.0" />
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
           <url-type value="DATABASE" />
           <host value="localhost" />
+<<<<<<< HEAD
           <port value="5432" />
           <database value="library" />
+=======
+          <port value="3306" />
+          <database value="mysql" />
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
           <type value="USER_PASSWORD" />
           <user value="psql" />
           <deprecated-pwd value="YWpheXByYXB1MTU=" />

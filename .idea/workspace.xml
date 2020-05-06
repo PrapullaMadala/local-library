@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="759421ba-8f5c-409f-ab11-6d79a6d7881d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/library.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/library.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+=======
+    <list default="true" id="63d99e2e-abe5-47a4-afc0-54ac2f7bd6e5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime.txt" beforeDir="false" />
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,15 +24,24 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
         <option value="Python Script" />
         <option value="HTML File" />
+=======
+        <option value="HTML File" />
+        <option value="Python Script" />
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectId" id="1a2Q4Gwhd0xeeROgIjuaAum0nIF" />
+=======
+  <component name="ProjectId" id="1aJ7MP63Ni63GGcnfauKbi3xNYD" />
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,12 +51,17 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+<<<<<<< HEAD
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Envs" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="C:\Users\prapu\DjangoProjects\library\catalogapp" />
     </key>
   </component>
@@ -137,11 +160,19 @@
       </list>
     </recent_temporary>
   </component>
+=======
+      <recent name="C:\Users\prapu\DjangoProjects\library" />
+      <recent name="C:\Users\prapu\DjangoProjects" />
+      <recent name="C:\Users\prapu\DjangoProjects\library\catalogapp\templates\catalogapp" />
+    </key>
+  </component>
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="759421ba-8f5c-409f-ab11-6d79a6d7881d" name="Default Changelist" comment="" />
       <created>1585931016073</created>
       <option name="number" value="Default" />
@@ -212,5 +243,40 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586438360270" />
+=======
+      <changelist id="63d99e2e-abe5-47a4-afc0-54ac2f7bd6e5" name="Default Changelist" comment="" />
+      <created>1586441793740</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586441793740</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="447" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588636014502">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="447" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1588636014502" />
+    <state x="213" y="19" key="DBNavigator.ProjectSettingsDialog" timestamp="1586464801940">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="213" y="19" key="DBNavigator.ProjectSettingsDialog/0.0.1366.728@0.0.1366.728" timestamp="1586464801940" />
+    <state x="462" y="118" key="FileChooserDialogImpl" timestamp="1587049563589">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587049563589" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1588269693600">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1588269693600" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1588610364558">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588610364558" />
+    <state x="344" y="49" width="670" height="58" key="search.everywhere.popup" timestamp="1588275466233">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="344" y="49" width="670" height="58" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1588275466233" />
+>>>>>>> fe1cba3204a2498c6f7728375c8fd574d6c06670
   </component>
 </project>
