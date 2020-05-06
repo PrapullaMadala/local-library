@@ -90,6 +90,7 @@ venv/
 ENV/
 venvlibrary/
 libenv/
+libenv
 # Spyder project settings
 .spyderproject
 
