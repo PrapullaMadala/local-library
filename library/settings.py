@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '#e3ciu90+2jv@prxcnic+wbh(47&!d
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['172.31.47.247', '.elasticbeanstalk.com', '127.0.0.1', 'library-dev.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['.elasticbeanstalk.com', '127.0.0.1', 'library-dev.us-east-1.elasticbeanstalk.com']
 
 # Application definition
 
@@ -142,10 +142,6 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = '/static/'
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_REDIRECT_URL = '/catalogapp/'
 
