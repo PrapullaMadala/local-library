@@ -1,2 +1,2 @@
 # local-library
-catalog application implemented
+catalog application implemented and deployed on AWS, HEROKU
